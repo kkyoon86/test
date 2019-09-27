@@ -6256,8 +6256,6 @@ html.js-overflow {
     color: #333;
 }
 
-
-
 /* ==========================================================================
   POPUP__BUY-COIN
    ========================================================================== */
@@ -8465,7 +8463,6 @@ html.js-overflow {
 
 }
 
-
 .SSX-address {
 
     font-size: 12px;
@@ -8485,15 +8482,14 @@ html.js-overflow {
 
     font-size: 12px;
     font-weight: 400;
-
     word-spacing: normal;
     text-transform: none;
     text-indent: 0px;
     letter-spacing: -0.3px;
     font-family: 'Noto Sans CJK KR Web';
-    line-height: 16px
+    line-height: 16px;
+    text-align: right;
 }
-
 
 .iconex-withdraw input {
     font-size: 12px;
@@ -8503,12 +8499,9 @@ html.js-overflow {
     margin-right: 10px;
 }
 
-
 .token-notice__address1 {
     margin-bottom: 14px;
 }
-
-
 
 .token-notice-address {
     position: absolute;
@@ -8527,7 +8520,6 @@ html.js-overflow {
 
 .heading-withdraw {
     color: #1e2c5d !important;
-
     word-spacing: -6px;
     margin-top: 10px;
 }
@@ -8563,18 +8555,17 @@ p.email-timeout {
   190527
    ========================================================================== */
 
-.btn-withdraw-complete {
+.btn-withdraw-cancel {
     margin-top: 30px;
-    float: right;
+    float: left;
     width: 47%;
 }
 
-.btn.btn-primary.btn-withdraw-cancel {
-    margin-top: 30px !important;
-    float: left !important;
-    width: 47% !important;
+.btn-withdraw-complete {
+	margin-top: 30px;
+    float: left;
+    width: 47%;
 }
-
 
 .pop_withdraw_btn_box {
     width: 80%;
@@ -8582,7 +8573,7 @@ p.email-timeout {
     margin: auto;
 }
 
-.pop_withdraw_btn_box .btn-withdraw-complete:first-child {
+.pop_withdraw_btn_box .btn-withdraw-cancel {
     margin-right: 6%;
 }
 
@@ -8648,5 +8639,6 @@ p.email-timeout {
     width: 550px;
 
 }
+
 
 /*# sourceMappingURL=style.css.map */
