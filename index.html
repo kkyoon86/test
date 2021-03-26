@@ -1,307 +1,144 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <title>반응형 포스터 워크샵</title>
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/base.css">
-
+    <link href="https://fonts.googleapis.com/css2?family=Gugi&display=swap" rel="stylesheet"><!-- 폰트불러오기 -->
+    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1,user-scalable=no"><!-- 화면 사이즈 읽어오는 태그 -->
+    <link rel="stylesheet" href="./css/reset.css"><!-- css reset 불러오기 -->
+    <meta charset="UTF-8">
+    <title>두번째 샘플</title>
     <style>
-        /* {
-      transition: all .3s;
-    } */
+        .box {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+            background-color: beige;
+        }
 
-        body {
-            background-color: grey;
+        .text {
+            font-family: 'Gugi', cursive;
+            color: coral;
+            font-size: 24px;
+            line-height: 40px;
+            width: 580px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1000;
+            word-break: keep-all;
+            word-wrap: break-word;
 
         }
 
-
-        /* 이 줄 아래에 각자 스타일 추가하기. */
-
-        .line1 {
-            stroke-width: 6px;
-            stroke: red;
-            width: 40vw;
+        .title {
+            font-family: 'Gugi', cursive;
             position: absolute;
+        }
+
+        .one {
+            top: 10vh;
+            left: 10vw;
+            font-size: 80px;
+        }
+
+        .two {
+            top: 15vh;
+            left: 16vw;
+            font-size: 120px;
+        }
+
+        .three {
             top: 20vh;
+            left: 24vw;
+            font-size: 220px;
+            transform: rotate(90deg);
+        }
+
+        .four {
+            top: 70vh;
+            left: 32vw;
+            font-size: 30px;
+
+        }
+
+        .five {
+            top: 40vh;
             left: 40vw;
-            z-index: 9999;
-
+            font-size: 140px;
         }
 
-        .asset1 {
-            fill: white;
-            stroke-width: 2px;
-            stroke: black;
-            width: 60vw;
-            z-index: 1;
-        }
-
-        .font {
-            color: white;
-            font-size: 10vh;
-            text-align: center;
-            top: 20vw;
-            transform: perspective(120px)rotatex(35deg);
-        }
-
-        .font2 {
-            color: red;
-            top: 15vw;
-            z-index: -1;
-
-        }
-
-        .none {
-            display: none;
-        }
-
-        .test2 {
-            font-weight: 500;
-            font-size: 50vw;
-            color: pink;
-        }
-
-        /*
-        .img1 {
-            width: 20vh;
-            position: absolute;
-            top: 20vh;
-            left: 30vh;
-            transform: perspective(500px);
-            animation: rot 1s infinite;
-        }
-
-        @keyframes rot {
-            from {
-                transform: rotateY(0)
-            }
-
-            to {
-                transform: rotateY(360deg)
-            }
-        }
-
-        .line1 {
-            width: 30vh;
-            stroke-width: 6px;
-            stroke: black;
-            animation: stw 2s infinite;
-            transition-timing-function: ease;
-            position: absolute;
-            top: 20vw;
-        }
-
-        .line2 {
-            top: 62vw;
+        .six {
+            top: 10vh;
             left: 50vw;
+            font-size: 140px;
         }
 
-        @keyframes stw {
-            0% {
-                stroke-width: 6px;
-            }
-
-            50% {
-                stroke-width: 2px;
-            }
-
-            100% {
-                stroke-width: 6px;
-            }
-        }
-        */
-
-        .ball {
-            width: 20vw;
-            height: 20vw;
-            background-color: blue;
-            border-radius: 10vw;
-            left: 20vw;
-            animation: 2s infinite;
+        .seven {
+            top: 30vh;
+            left: 80vw;
+            font-size: 70px;
+            animation-name: rotate;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease;
         }
 
+        .eight {
+            top: 90vh;
+            left: 40vw;
+            font-size: 40px;
+        }
 
-        @-webkit-keyframes bounce {
+        /* 키프레임을 설정해 준후 이름을 사용하여 애니메이션을 만들어준다. */
+        @keyframes rotate {
             from {
-                top: 0;
+                transform: rotate(0);
             }
 
             to {
-                top: 200px;
-                left: 200px;
-                width: 21vw;
-                background-color: red;
-            }
-
-
-
-        }
-
-        @keyframes bounce2 {
-            0% {
-                top: 0;
-            }
-
-            50% {
-                top: 200px;
-                width: 21vw;
-                background-color: red;
-            }
-
-            100% {
-                top: 0;
-
-            }
-
-        }
-
-        .font-rot {
-            font-size: 100px;
-            color: antiquewhite;
-            top: 200px;
-
-            animation: rot 2s;
-            animation-delay: 2s;
-
-        }
-
-        @keyframes rot {
-            0% {
-                color: antiquewhite;
-            }
-
-            50% {
-                color: blueviolet;
-            }
-
-            100% {
-                color: aqua;
+                transform: rotate(360deg)
             }
         }
 
-        .news {
-            width: 20vw;
-        }
+        /* 미디어쿼리를 이용하여 모바일용 css를 적어준다. max-width는 이 값보다 작은 화면에 적용된다. */
+        @media screen and (max-width: 768px) {
+            .text {
 
-        .lineWidth {
-            left: 20vw;
-            stroke: red;
-            stroke-width: 2px;
-            width: 10vw;
-            -webkit-animation: stwi 2s infinite;
-            -moz-animation: stwi 2s infinite;
-            -o-animation: stwi 2s infinite;
-            -ms-animation: stwi 2s infinite;
-            animation-timing-function: ease;
-            transform-origin: 50% 50%;
-        }
+                font-size: 14px;
+                line-height: 24px;
+                width: 330px;
 
-        @keyframes stwi {
-            0% {
-                stroke-width: 2px;
-                opacity: 0;
-                transform: rotateZ(0);
-            }
 
-            50% {
-                stroke-width: 10px;
-                opacity: 1;
-            }
-
-            100% {
-                stroke-width: 2px;
-                opacity: 0;
-                transform: rotateZ(360deg);
             }
         }
-
-        .cls-2 {
-            stroke: white;
-        }
-
-        /* 이 주석 위의 스타일은 창 너비 600px, 높이 400px 미만에서 적용된다. */
-
-        /* 최대 창 높이 700px 이하에서는 아래 스타일이 적용된다. */
-        @media (max-width: 400px) and (max-height: 700px) {
-
-            .font-rot {
-                writing-mode: vertical-lr;
-            }
-        }
-
-
-
-        /* 최소 창 너비 600px 이상에서는 아래 스타일이 적용된다. */
-
-        /* A PEN BY Zach Saucier */
-
-        @media (min-width: 600px) {}
-
-        /* 최소 창 너비 600px, 최소 창 높이 400 px 이상에서는 아래 스타일이 적용된다. */
-
-        @media (min-width: 600px) and (min-height: 400px) {}
 
     </style>
 </head>
 
 <body>
-
-    <!-- 이 줄 위에는 아무것도 추가하지 않기! -->
-    <div class="container">
-        <!-- 모든 html 요소는 container div 안에 넣는다. -->
-        <div class="none">
-            <div class="font">디자인학교</div>
-            <div class="font font2">디자인학교</div>
-            <div class="font font3">디자인학교</div>
+    <div class="box">
+        <!-- 상위div는 포지션 relative를 사용한다. -->
+        <div class="text">
+            <!-- 하위div는 포지션 absolute를 사용한다. -->
+            소개<br>
+            디자인아카데미는 관계에서 삶과 배움의 방법을 찾고, 사회에서 잊힌 교육의 본질을 바로 세우려는 의지로 설립된 공동체입니다. 2014년 온라인 컨텐츠 강의를 시작으로 2017년 부터는 오프라인 공간에서 운영되고 있습니다. 디자인학교는 교육이 가진 존재의 의미, 즉 ‘학문을 배우고 연구하는 곳’이라는 본래의 가치를 충실히 실현하고자 합니다.
+            <br><br>
+            수업환경<br>
+            디자인아카데미에는 20대부터 60대까지 다양한 학생들이 모여 공부하고 있습니다. 강의는 일과 병행하며 듣는 분들을 위해 주로 야간에 진행됩니다. 주중에 진행되는 수업은 주로 오후 7시 30분~10시 30분입니다.
         </div>
-        <div class="font-rot">디자인학교</div>
-        <div class="ball"></div>
-        <svg class="lineWidth" viewBox="0 0 208.75 208.75">
+
+        <div class="title one">디학</div><!-- class는 중복되어 쓸수있다. 공통적으로 사용할 class 개별적으로 사용할 class 를 각각 설정하여 사용한다-->
+        <div class="title two">디학</div>
+        <div class="title three">디학</div>
+        <div class="title four">디학</div>
+        <div class="title five">디학</div>
+        <div class="title six">디학</div>
+        <div class="title seven">디학</div>
+        <div class="title eight">디학</div>
 
 
-            <line class="cls-1" x1="104.37" x2="104.37" y2="78.59" />
-            <line class="cls-2" x1="30.57" y1="30.57" x2="86.14" y2="86.14" />
-            <line class="cls-1" y1="104.37" x2="78.59" y2="104.37" />
-            <line class="cls-1" x1="30.57" y1="178.18" x2="86.14" y2="122.61" />
-            <line class="cls-1" x1="104.37" y1="208.75" x2="104.37" y2="130.16" />
-            <line class="cls-1" x1="178.18" y1="178.18" x2="122.61" y2="122.61" />
-            <line class="cls-1" x1="208.75" y1="104.37" x2="130.16" y2="104.37" />
-            <line class="cls-1" x1="178.18" y1="30.57" x2="122.61" y2="86.14" />
-
-        </svg>
-
-        <div class="svgcont">
-            <svg class="news" viewBox="0 0 138.05 138.05">
-                <defs>
-                    <style>
-                        .cls-1 {
-                            fill: none;
-                            stroke: #000;
-                            stroke-miterlimit: 10;
-                        }
-
-                    </style>
-                </defs>
-                <title>자산 2</title>
-                <g id="레이어_2" data-name="레이어 2">
-                    <g id="레이어_1-2" data-name="레이어 1">
-                        <ellipse class="cls-1" cx="69.02" cy="69.02" rx="48.47" ry="83.9" transform="translate(-28.59 69.02) rotate(-45)" />
-                        <circle cx="64.09" cy="124.4" r="7.51" />
-                        <path d="M32.23,8.86l6.43,6.43L34.72,36,47.05,23.68l6.49,6.49L31.26,52.45,24.77,46l3.89-20.58L16.42,37.62,9.95,31.14Z" />
-                        <path d="M58.1,34.73,76.56,53.18,71.8,57.94,60.25,46.39,56.7,49.93,67.42,60.65l-4.55,4.54L52.16,54.47l-4.39,4.39L59.65,70.75l-5,5L35.82,57Z" />
-                        <path d="M78.3,54.93l6.54,6.54L74.72,76.3l15.92-9,6.52,6.52-9,15.91L103,79.6l6.51,6.51-27.2,17.37-6.75-6.75L85.65,78.79,67.73,88.92,61,82.17Z" />
-                        <path d="M95.62,102.07l7,6.14a7.07,7.07,0,0,0-1.57,3.3,5.15,5.15,0,0,0,1.69,4.39,4.76,4.76,0,0,0,3,1.58,2.93,2.93,0,0,0,2.4-.81,2.89,2.89,0,0,0,.79-2.31q-.08-1.44-2.23-4.82-3.51-5.55-3.75-9.17a7.7,7.7,0,0,1,2.36-6.25,8.26,8.26,0,0,1,4.24-2.25,9.34,9.34,0,0,1,5.4.59,19.79,19.79,0,0,1,6.35,4.61q4.27,4.27,4.92,8.1t-2.39,7.72l-6.87-6.11a4.29,4.29,0,0,0-.5-6.25,3.9,3.9,0,0,0-2.32-1.3,2.21,2.21,0,0,0-1.85.63,1.76,1.76,0,0,0-.46,1.46,8,8,0,0,0,1.49,3.13,40.83,40.83,0,0,1,4.5,8.44,9.63,9.63,0,0,1,.37,5.31,8.86,8.86,0,0,1-2.41,4.19,10,10,0,0,1-5.14,2.77,10.5,10.5,0,0,1-6.06-.57,18.94,18.94,0,0,1-6.3-4.43q-5.69-5.69-5.69-10.06A12.22,12.22,0,0,1,95.62,102.07Z" />
-                    </g>
-                </g>
-            </svg>
-        </div>
     </div>
-
-    <div class="test2">디자인학교</div>
-    <!-- 이 줄 아래에는 아무것도 추가하지 않기! -->
-
 </body>
 
 </html>
